@@ -4,7 +4,7 @@ export const BirthdayListItemSkeleton = () => {
   return (
     <div
       className="flex items-center gap-4 w-96"
-      data-testid="birthday-list-item"
+      data-testid="birthday-list-item-skeleton"
     >
       <Skeleton className="w-20 h-20 min-w-20 rounded-full" />
 

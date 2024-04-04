@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 
 import { useGetTodaysBirthdaysQuery } from "@/features/fetch-birthdays/queries/use-get-todays-birthdays-query"
-import { BirthdayListItemComponent } from "./birthday-list-item"
-import { BirthdayListSkeleton } from "./birthday-list-skeleton"
+import { BirthdayListSkeleton } from "../birthday-list-skeleton"
+import { BirthdayListItemComponent } from "../birthday-list-item"
 
 const listVariants = {
   open: {

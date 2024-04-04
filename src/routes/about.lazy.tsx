@@ -1,4 +1,4 @@
-import { AboutPageComponent } from "@/components/routes/about-page/about-page.component"
+import { AboutPageComponent } from "@/components/routes/about-page"
 import { createLazyFileRoute } from "@tanstack/react-router"
 
 export const Route = createLazyFileRoute("/about")({

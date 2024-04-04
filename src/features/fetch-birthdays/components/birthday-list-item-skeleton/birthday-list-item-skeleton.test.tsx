@@ -1,10 +1,9 @@
 import { render, screen } from "@testing-library/react"
 import { expect, test } from "vitest"
 import { vi } from "vitest"
-import { BirthdayList } from "./birthday-list"
-import { useGetTodaysBirthdaysQuery } from "../queries/use-get-todays-birthdays-query"
+import { useGetTodaysBirthdaysQuery } from "../../queries/use-get-todays-birthdays-query"
 import { UseQueryResult } from "@tanstack/react-query"
-// import "@testing-library/jest-dom/vitest"
+import { BirthdayList } from "../birthday-list"
 
 vi.mock(
   "@/features/fetch-birthdays/queries/use-get-todays-birthdays-query",
@@ -15,18 +14,22 @@ vi.mock(
 
 const mockUseGetTodaysBirthdaysQuery = vi.mocked(useGetTodaysBirthdaysQuery)
 
-test("No birthdays found element rendered", async () => {
+// Loading placeholder array
+const loadingItemCount = Array.from({ length: 8 }, (_, i) => i)
+
+test("renders birthday list sekeleton items correctly", async () => {
   mockUseGetTodaysBirthdaysQuery.mockReturnValue({
-    isLoading: false,
-    isFetched: true,
+    isFetched: false,
+    isFetching: true,
+    isLoading: true,
+    error: null,
     data: [],
   } as unknown as UseQueryResult<
     Array<{ image: string; name: string; year: number; text: string }>,
     Error
   >)
-
   render(<BirthdayList />)
 
-  const noBirthdaysElement = await screen.findByTestId("no-birthdays-message")
-  expect(noBirthdaysElement).toBeDefined()
+  const items = await screen.findAllByTestId("birthday-list-item-skeleton")
+  expect(items.length).toBe(loadingItemCount.length)
 })

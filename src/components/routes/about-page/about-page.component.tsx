@@ -1,6 +1,5 @@
-import { motion } from "framer-motion"
-
 import { TitleLayout } from "@/components/common/layouts/title-layout"
+import { motion } from "framer-motion"
 
 export const AboutPageComponent = () => {
   return (

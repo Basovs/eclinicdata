@@ -1,4 +1,4 @@
-import { BirthdayListItemSkeleton } from "./birthday-list-item-skeleton"
+import { BirthdayListItemSkeleton } from "../birthday-list-item-skeleton"
 
 // Loading placeholder array
 const loadingItemCount = Array.from({ length: 8 }, (_, i) => i)

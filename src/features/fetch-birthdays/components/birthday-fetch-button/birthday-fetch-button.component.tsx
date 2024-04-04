@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { useGetTodaysBirthdaysQuery } from "@/features/fetch-birthdays/queries/use-get-todays-birthdays-query"
 import { useGetBirthdaysStore } from "@/features/fetch-birthdays/stores/use-get-birthdays-store"
 import { Loader2Icon } from "lucide-react"
-import { BirthdayErrorModal } from "./birthday-error-modal"
+import { BirthdayErrorModal } from "../birthday-error-modal"
 
 export const BirthdayFetchButton = () => {
   const setEnableFetch = useGetBirthdaysStore((state) => state.setEnableFetch)

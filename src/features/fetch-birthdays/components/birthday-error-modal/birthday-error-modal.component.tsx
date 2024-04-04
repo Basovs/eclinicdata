@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { useGetBirthdaysStore } from "../stores/use-get-birthdays-store"
+import { useGetBirthdaysStore } from "../../stores/use-get-birthdays-store"
 
 export function BirthdayErrorModal() {
   const isError = useGetBirthdaysStore((state) => state.isError)

@@ -1,6 +1,6 @@
 import { TitleLayout } from "@/components/common/layouts/title-layout"
-import { BirthdayList } from "../../../features/fetch-birthdays/components/birthday-list"
-import { BirthdayFetchButton } from "../../../features/fetch-birthdays/components/birthday-fetch-button"
+import { BirthdayFetchButton } from "@/features/fetch-birthdays/components/birthday-fetch-button"
+import { BirthdayList } from "@/features/fetch-birthdays/components/birthday-list"
 
 export const HomePageComponent = () => {
   return (

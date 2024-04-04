@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react"
 import { expect, test } from "vitest"
 import { vi } from "vitest"
-import { BirthdayList } from "./birthday-list"
-import { useGetTodaysBirthdaysQuery } from "../queries/use-get-todays-birthdays-query"
+import { useGetTodaysBirthdaysQuery } from "../../queries/use-get-todays-birthdays-query"
 import { UseQueryResult } from "@tanstack/react-query"
+import { BirthdayList } from "../birthday-list"
 
 vi.mock(
   "@/features/fetch-birthdays/queries/use-get-todays-birthdays-query",

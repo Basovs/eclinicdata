@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import type { BirthdayListItem } from "../types"
+import type { BirthdayListItem } from "../../types"
 
 const listItemVariants = {
   open: {
