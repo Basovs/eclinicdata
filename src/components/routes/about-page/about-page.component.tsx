@@ -1,4 +1,4 @@
-import { TitleLayout } from "@/components/common/layouts/title-layout"
+import { TitleLayout } from "@/components/layouts/title-layout"
 import { motion } from "framer-motion"
 
 export const AboutPageComponent = () => {
@@ -12,7 +12,7 @@ export const AboutPageComponent = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="w-full max-w-screen-lg mx-auto">
+        <div className="flex flex-col items-center w-full max-w-screen-lg mx-auto">
           <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight">
             Tech used in this app:
           </h2>
