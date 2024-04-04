@@ -26,13 +26,19 @@ export const BirthdayList = () => {
     return
   }
 
-  // No birthdays found
+  // Data undefined
   if (!birthdays) {
-    return <p>No birthdays found</p>
+    return <p>No data</p>
+  }
+
+  // No birthdays found
+  if (birthdays.length === 0) {
+    return <p data-testid="no-birthdays-message">No birthdays found</p>
   }
 
   return (
     <motion.div
+      data-testid="birthday-list"
       className="grid md:grid-cols-2 xl:grid-cols-3 flex-col gap-4 py-10"
       variants={listVariants}
       animate="open"

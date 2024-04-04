@@ -23,6 +23,7 @@ export const BirthdayListItemComponent = (props: BirthdayListItem) => {
     <motion.div
       className="flex items-center gap-4 w-96"
       variants={listItemVariants}
+      data-testid="birthday-list-item"
     >
       {props.image ? (
         <img
