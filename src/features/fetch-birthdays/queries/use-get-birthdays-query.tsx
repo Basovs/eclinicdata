@@ -16,7 +16,7 @@ type GetBirthdaysProps = {
 
 const fetchBirthdays = async (props: FetBirthdaysProps) => {
   try {
-    // Throw error to display Error Modal
+    // // Throw error to display Error Modal
     // throw new Error("Oh no!")
 
     const delay = Math.floor(Math.random() * 1500) + 500
