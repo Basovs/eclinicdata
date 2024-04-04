@@ -18,12 +18,13 @@ export const AboutPageComponent = () => {
           </h2>
 
           <ul className="list-disc pl-8">
-            <li>React + Vite</li>
-            <li>Tanstack Router</li>
-            <li>Tanstack Query</li>
-            <li>ShadcnUI</li>
-            <li>Tailwind CSS</li>
-            <li>framer-motion</li>
+            <li>React + Vite - "Framework"</li>
+            <li>Tanstack Router - Routing</li>
+            <li>Tanstack Query - Fetching/caching</li>
+            <li>ShadcnUI - UI components</li>
+            <li>Tailwind CSS - CSS</li>
+            <li>framer-motion - Animations</li>
+            <li>Vitest - Testing</li>
           </ul>
         </div>
       </motion.section>
