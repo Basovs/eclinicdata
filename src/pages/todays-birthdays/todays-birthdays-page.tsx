@@ -1,4 +1,4 @@
-import { TitleLayout } from '@/components/layouts/title-layout'
+import { TitleLayout } from '@/layouts/title-layout'
 import { BirthdayFetchButton } from '@/pages/todays-birthdays/components/birthday-fetch-button'
 import { BirthdayList } from '@/pages/todays-birthdays/components/birthday-list'
 
