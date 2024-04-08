@@ -1,1 +1,1 @@
-export * from "./birthday-list-item.component"
+export * from './birthday-list-item.component'

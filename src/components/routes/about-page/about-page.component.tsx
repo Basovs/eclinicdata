@@ -1,5 +1,6 @@
-import { TitleLayout } from "@/components/layouts/title-layout"
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
+
+import { TitleLayout } from '@/components/layouts/title-layout'
 
 export const AboutPageComponent = () => {
   return (
@@ -17,14 +18,31 @@ export const AboutPageComponent = () => {
             Tech used in this app:
           </h2>
 
-          <ul className="list-disc pl-8">
-            <li>React + Vite - "Framework"</li>
-            <li>Tanstack Router - Routing</li>
-            <li>Tanstack Query - Fetching/caching</li>
-            <li>ShadcnUI - UI components</li>
-            <li>Tailwind CSS - CSS</li>
-            <li>framer-motion - Animations</li>
-            <li>Vitest - Testing</li>
+          <ul className="list-disc pl-20 mt-2">
+            <li>
+              <span className="font-semibold">React + Vite</span> - "Framework"
+            </li>
+            <li>
+              <span className="font-semibold">Tanstack Router</span> - Routing
+            </li>
+            <li>
+              <span className="font-semibold">Tanstack Query</span> - Fetching/caching
+            </li>
+            <li>
+              <span className="font-semibold">Zustand</span> - State management
+            </li>
+            <li>
+              <span className="font-semibold">ShadcnUI</span> - UI components
+            </li>
+            <li>
+              <span className="font-semibold">Tailwind CSS</span> - CSS
+            </li>
+            <li>
+              <span className="font-semibold">framer-motion</span> - Animations
+            </li>
+            <li>
+              <span className="font-semibold">Vitest</span> - Testing
+            </li>
           </ul>
         </div>
       </motion.section>

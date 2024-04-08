@@ -1,1 +1,1 @@
-export * from "./title-layout.component"
+export * from './title-layout.component'

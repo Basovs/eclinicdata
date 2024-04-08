@@ -1,4 +1,4 @@
-import { create } from "zustand"
+import { create } from 'zustand'
 
 type GetBirthdaysStoreState = {
   fetchEnabled: boolean
@@ -7,9 +7,9 @@ type GetBirthdaysStoreState = {
   setIsError: (isError: boolean) => void
 }
 
-export const useGetBirthdaysStore = create<GetBirthdaysStoreState>((set) => ({
+export const useGetBirthdaysStore = create<GetBirthdaysStoreState>(set => ({
   fetchEnabled: false,
-  setEnableFetch: (fetchEnabled) => set({ fetchEnabled }),
+  setEnableFetch: fetchEnabled => set({ fetchEnabled }),
   isError: false,
-  setIsError: (isError) => set({ isError }),
+  setIsError: isError => set({ isError }),
 }))

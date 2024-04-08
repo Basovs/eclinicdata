@@ -1,1 +1,1 @@
-export * from "./birthday-fetch-button.component"
+export * from './birthday-fetch-button.component'

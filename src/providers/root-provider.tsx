@@ -1,5 +1,5 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { FC, ReactNode } from "react"
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { FC, ReactNode } from 'react'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,10 +13,6 @@ type RootProviderProps = {
   children: ReactNode
 }
 
-export const RootProvider: FC<RootProviderProps> = (props) => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      {props.children}
-    </QueryClientProvider>
-  )
+export const RootProvider: FC<RootProviderProps> = props => {
+  return <QueryClientProvider client={queryClient}>{props.children}</QueryClientProvider>
 }

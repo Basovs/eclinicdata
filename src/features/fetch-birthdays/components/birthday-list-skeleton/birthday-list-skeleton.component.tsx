@@ -1,7 +1,7 @@
-import { BirthdayListItemSkeleton } from "../birthday-list-item-skeleton"
+import { BirthdayListItemSkeleton } from '../birthday-list-item-skeleton'
 
 // Loading placeholder array
-const loadingItemCount = Array.from({ length: 8 }, (_, i) => i)
+const loadingItemCount = Array.from({ length: 9 }, (_, i) => i)
 
 export const BirthdayListSkeleton = () => {
   return (

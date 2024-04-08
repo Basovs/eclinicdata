@@ -1,1 +1,1 @@
-export const BIRTHDAYS_QUERY_KEY = "BIRTHDAYS"
+export const BIRTHDAYS_QUERY_KEY = 'BIRTHDAYS'

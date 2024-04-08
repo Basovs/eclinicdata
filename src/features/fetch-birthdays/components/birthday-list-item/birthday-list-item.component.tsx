@@ -1,5 +1,6 @@
-import { motion } from "framer-motion"
-import type { BirthdayListItem } from "../../types"
+import { motion } from 'framer-motion'
+
+import type { BirthdayListItem } from '../../types'
 
 const listItemVariants = {
   open: {
@@ -35,9 +36,9 @@ export const BirthdayListItemComponent = (props: BirthdayListItem) => {
         <div className="flex items-center justify-center w-20 h-20 min-w-20 rounded-full bg-secondary">
           <p className="text-xl">
             {props.name
-              .split(" ")
-              .map((name) => name[0])
-              .join("")}
+              .split(' ')
+              .map(name => name[0])
+              .join('')}
           </p>
         </div>
       )}
