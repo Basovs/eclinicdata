@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Loader2Icon } from 'lucide-react'
 
-import { useGetTodaysBirthdaysQuery } from '@/components/pages/todays-birthdays-page/queries/use-get-todays-birthdays-query'
-import { useGetBirthdaysStore } from '@/components/pages/todays-birthdays-page/stores/use-get-birthdays-store'
 import { Button } from '@/components/ui/button'
+import { useGetTodaysBirthdaysQuery } from '@/pages/todays-birthdays/queries/use-get-todays-birthdays-query'
+import { useGetBirthdaysStore } from '@/pages/todays-birthdays/stores/use-get-birthdays-store'
 
 import { BirthdaysErrorModal } from '../birthdays-error-modal'
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { TitleLayout } from '@/components/layouts/title-layout'
 
-export const AboutPageComponent = () => {
+export const AboutPage = () => {
   return (
     <TitleLayout
       title="About"

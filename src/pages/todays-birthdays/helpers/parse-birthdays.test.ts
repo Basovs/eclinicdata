@@ -2,7 +2,7 @@ import { BirthdayListItems, BirthdaysResponse } from '../types'
 import { parseBirthdays } from './parse-birthdays'
 
 describe('parseBirthdays', () => {
-  it('parses and sorts birthdays correctly', (): void => {
+  test('parses and sorts birthdays correctly', (): void => {
     const input: BirthdaysResponse = {
       births: [
         {

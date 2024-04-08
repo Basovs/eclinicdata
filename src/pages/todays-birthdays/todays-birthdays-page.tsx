@@ -1,6 +1,6 @@
 import { TitleLayout } from '@/components/layouts/title-layout'
-import { BirthdayFetchButton } from '@/components/pages/todays-birthdays-page/components/birthday-fetch-button'
-import { BirthdayList } from '@/components/pages/todays-birthdays-page/components/birthday-list'
+import { BirthdayFetchButton } from '@/pages/todays-birthdays/components/birthday-fetch-button'
+import { BirthdayList } from '@/pages/todays-birthdays/components/birthday-list'
 
 export const TodaysBirthdaysPage = () => {
   const today = new Date()

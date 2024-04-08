@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 
 import { BirthdaysErrorModal } from './birthdays-error-modal.component'
 
-vi.mock('../../stores/use-get-birthdays-store', () => ({
+vi.mock('@/pages/todays-birthdays/stores/use-get-birthdays-store', () => ({
   useGetBirthdaysStore: vi.fn(() => ({
     isError: true,
     setIsError: vi.fn(),
