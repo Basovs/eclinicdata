@@ -14,10 +14,10 @@ describe('BirthdaysErrorModal', () => {
   test("Does 'Todays Birthdays Error Modal' component render", async () => {
     render(<BirthdaysErrorModal />)
 
-    const errorModalTitle = await screen.getByTestId('error-modal-title')
+    const title = screen.getByRole('heading')
 
-    expect(errorModalTitle).toBeInTheDocument()
-    expect(errorModalTitle).toHaveTextContent('Error')
+    expect(title).toBeInTheDocument()
+    expect(title).toHaveTextContent('Error')
 
     screen.debug()
   })

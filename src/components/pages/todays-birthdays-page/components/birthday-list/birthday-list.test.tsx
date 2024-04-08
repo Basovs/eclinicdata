@@ -6,8 +6,6 @@ import { vi } from 'vitest'
 import { BirthdayList } from '.'
 import { useGetTodaysBirthdaysQuery } from '../../queries/use-get-todays-birthdays-query'
 
-// import "@testing-library/jest-dom/vitest"
-
 vi.mock('@/features/fetch-birthdays/queries/use-get-todays-birthdays-query', () => ({
   useGetTodaysBirthdaysQuery: vi.fn(),
 }))

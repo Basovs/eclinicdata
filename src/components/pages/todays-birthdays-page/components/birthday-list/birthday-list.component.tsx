@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import { useGetTodaysBirthdaysQuery } from '@/features/fetch-birthdays/queries/use-get-todays-birthdays-query'
+import { useGetTodaysBirthdaysQuery } from '@/components/pages/todays-birthdays-page/queries/use-get-todays-birthdays-query'
 
 import { BirthdayListItemComponent } from '../birthday-list-item'
 import { BirthdayListSkeleton } from '../birthday-list-skeleton'

@@ -1,8 +1,8 @@
 import { TitleLayout } from '@/components/layouts/title-layout'
-import { BirthdayFetchButton } from '@/features/fetch-birthdays/components/birthday-fetch-button'
-import { BirthdayList } from '@/features/fetch-birthdays/components/birthday-list'
+import { BirthdayFetchButton } from '@/components/pages/todays-birthdays-page/components/birthday-fetch-button'
+import { BirthdayList } from '@/components/pages/todays-birthdays-page/components/birthday-list'
 
-export const HomePageComponent = () => {
+export const TodaysBirthdaysPage = () => {
   const today = new Date()
   const formattedDate = today.toLocaleDateString('en-US', {
     dateStyle: 'medium',
