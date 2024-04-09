@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import type { BirthdayListItem } from '../../types'
+import type { BirthdayListItemType } from '../../types'
 
 const listItemVariants = {
   open: {
@@ -19,7 +19,7 @@ const listItemVariants = {
   },
 }
 
-export const BirthdayListItemComponent = (props: BirthdayListItem) => {
+export const BirthdayListItem = (props: BirthdayListItemType) => {
   return (
     <motion.div
       className="flex items-center gap-4 w-96"

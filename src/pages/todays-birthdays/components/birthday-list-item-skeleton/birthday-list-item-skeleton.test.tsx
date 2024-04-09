@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { expect, test } from 'vitest'
 import { vi } from 'vitest'
 
+import { BIRTHDAYS_PER_PAGE } from '../../constants/values'
 import { useGetTodaysBirthdaysQuery } from '../../queries/use-get-todays-birthdays-query'
 import { BirthdayList } from '../birthday-list'
 
@@ -13,7 +14,7 @@ vi.mock('@/pages/todays-birthdays/queries/use-get-todays-birthdays-query', () =>
 const mockUseGetTodaysBirthdaysQuery = vi.mocked(useGetTodaysBirthdaysQuery)
 
 // Loading placeholder array
-const loadingItemCount = Array.from({ length: 9 }, (_, i) => i)
+const loadingItemCount = Array.from({ length: BIRTHDAYS_PER_PAGE }, (_, i) => i)
 
 describe('BirthdayListItemSkeleton', () => {
   test('renders birthday list sekeleton items correctly', async () => {

@@ -59,11 +59,11 @@ export type BirthdaysResponse = {
   births: Birthdays
 }
 
-export type BirthdayListItem = {
+export type BirthdayListItemType = {
   image: string
   name: string
   year: number
   text: string
 }
 
-export type BirthdayListItems = BirthdayListItem[]
+export type BirthdayListItems = BirthdayListItemType[]
