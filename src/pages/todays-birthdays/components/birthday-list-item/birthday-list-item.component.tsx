@@ -1,30 +1,35 @@
-import { motion } from 'framer-motion'
+import { Variants, motion } from 'framer-motion'
 
 import type { BirthdayListItemType } from '../../types'
 
-const listItemVariants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
+const listItemVariants: Variants = {
+  initial: (index: number) => ({
     y: 50,
     opacity: 0,
     transition: {
-      y: { stiffness: 1000 },
+      delay: index * 0.09,
+      type: 'tween',
     },
-  },
+  }),
+  animate: (index: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: index * 0.09,
+      type: 'tween',
+    },
+  }),
 }
 
-export const BirthdayListItem = (props: BirthdayListItemType) => {
+export const BirthdayListItem = (props: BirthdayListItemType & { index: number }) => {
   return (
     <motion.div
+      data-testid="birthday-list-item"
       className="flex items-center gap-4 w-96"
       variants={listItemVariants}
-      data-testid="birthday-list-item"
+      initial="initial"
+      animate="animate"
+      custom={props.index}
     >
       {props.image ? (
         <img

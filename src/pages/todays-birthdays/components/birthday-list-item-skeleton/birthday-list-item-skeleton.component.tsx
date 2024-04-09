@@ -1,8 +1,32 @@
+import { Variants, motion } from 'framer-motion'
+
 import { Skeleton } from '@/components/ui/skeleton'
+
+const listItemVariants: Variants = {
+  initial: {
+    opacity: 0,
+    transition: {
+      type: 'tween',
+    },
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+    },
+  },
+}
 
 export const BirthdayListItemSkeleton = () => {
   return (
-    <div className="flex items-center gap-4 w-96" data-testid="birthday-list-item-skeleton">
+    <motion.div
+      data-testid="birthday-list-item-skeleton"
+      className="flex items-center gap-4 w-96"
+      variants={listItemVariants}
+      initial="initial"
+      animate="animate"
+    >
       <Skeleton className="w-20 h-20 min-w-20 rounded-full" />
 
       <div className="flex flex-col gap-1 w-full">
@@ -10,6 +34,6 @@ export const BirthdayListItemSkeleton = () => {
 
         <Skeleton className="h-[24px]"></Skeleton>
       </div>
-    </div>
+    </motion.div>
   )
 }

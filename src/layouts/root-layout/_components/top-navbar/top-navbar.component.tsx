@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 export const TopNavbar = () => {
   return (
-    <div className="flex justify-center gap-2 py-1 bg-secondary">
+    <div className="flex justify-center gap-2 py-2.5 bg-secondary border-b">
       <Link to="/">
         <Button variant="link" size="lg">
           Home

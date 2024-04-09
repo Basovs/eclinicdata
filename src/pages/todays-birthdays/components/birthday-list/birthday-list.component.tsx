@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 
 import { useGetTodaysBirthdaysQuery } from '@/pages/todays-birthdays/queries/use-get-todays-birthdays-query'
@@ -6,15 +5,6 @@ import { useGetTodaysBirthdaysQuery } from '@/pages/todays-birthdays/queries/use
 import { useGetBirthdaysStore } from '../../stores/use-get-birthdays-store'
 import { BirthdayListItem } from '../birthday-list-item'
 import { BirthdayListSkeleton } from '../birthday-list-skeleton'
-
-const listVariants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-}
 
 export const BirthdayList = () => {
   const birthdaysFrom = useGetBirthdaysStore(state => state.birthdaysFrom)
@@ -51,16 +41,13 @@ export const BirthdayList = () => {
   const paginatedBirthdays = birthdays.slice(birthdaysFrom, birthdaysTo)
 
   return (
-    <motion.div
+    <div
       data-testid="birthday-list"
       className="grid md:grid-cols-2 xl:grid-cols-3 flex-col gap-4 py-10 min-h-[568px]"
-      variants={listVariants}
-      animate="open"
-      initial="closed"
     >
-      {paginatedBirthdays.map(birthday => (
-        <BirthdayListItem key={`${birthday.name}_${birthday.year}`} {...birthday} />
+      {paginatedBirthdays.map((birthday, i) => (
+        <BirthdayListItem key={`${birthday.name}_${birthday.year}`} {...birthday} index={i} />
       ))}
-    </motion.div>
+    </div>
   )
 }

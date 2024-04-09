@@ -14,8 +14,6 @@ type GetBirthdaysStoreState = {
   setBirthdaysTo: (birthdaysTo: number) => void
   birthdays: BirthdayListItemType[] | undefined
   setBirthdays: (birthdays: BirthdayListItemType[] | undefined) => void
-  birthdaysToShow: BirthdayListItemType[]
-  setBirthdaysToShow: (birthdaysToShow: BirthdayListItemType[]) => void
 }
 
 export const useGetBirthdaysStore = create<GetBirthdaysStoreState>(set => ({
@@ -29,10 +27,4 @@ export const useGetBirthdaysStore = create<GetBirthdaysStoreState>(set => ({
   setBirthdaysTo: birthdaysTo => set({ birthdaysTo }),
   birthdays: [],
   setBirthdays: birthdays => set({ birthdays: birthdays }),
-  // calculate based on birthdaysFrom and birthdaysTo
-  birthdaysToShow: [],
-  setBirthdaysToShow: birthdaysToShow =>
-    set(state => ({
-      birthdaysToShow: birthdaysToShow.slice(state.birthdaysFrom, state.birthdaysTo),
-    })),
 }))
