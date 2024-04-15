@@ -8,13 +8,9 @@ describe('BirthdaysErrorModal', () => {
   it("Does 'Todays Birthdays Error Modal' component render", async () => {
     const { result } = renderHook(() => useGetBirthdaysStore())
 
-    console.log('result.current.isError 111 -> ', result.current.isError)
-
     act(() => {
       result.current.setIsError(true)
     })
-
-    console.log('result.current.isError 222 -> ', result.current.isError)
 
     expect(result.current.isError).toEqual(true)
 
