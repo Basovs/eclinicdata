@@ -1,20 +1,24 @@
-import { render, screen } from '@testing-library/react'
+import { render, renderHook, screen } from '@testing-library/react'
+import { act } from 'react-dom/test-utils'
 
+import { useGetBirthdaysStore } from '../../stores/get-birthdays/get-birthdays-store'
 import { BirthdaysErrorModal } from './birthdays-error-modal.component'
 
-vi.mock('@/pages/todays-birthdays/stores/use-get-birthdays-store', () => ({
-  useGetBirthdaysStore: vi.fn(() => ({
-    isError: true,
-    setIsError: vi.fn(),
-    setEnableFetch: vi.fn(),
-  })),
-}))
-
 describe('BirthdaysErrorModal', () => {
-  test("Does 'Todays Birthdays Error Modal' component render", async () => {
+  it("Does 'Todays Birthdays Error Modal' component render", async () => {
     render(<BirthdaysErrorModal />)
 
-    const title = screen.getByRole('heading')
+    const {
+      result: {
+        current: { isError, setIsError },
+      },
+    } = renderHook(() => useGetBirthdaysStore())
+    console.log('isErrorisError -> ', isError)
+
+    act(() => setIsError(true))
+    console.log('isErrorisError222 -> ', isError)
+
+    const title = await screen.findByTestId('fetch-birthdays-error-modal-title')
 
     expect(title).toBeInTheDocument()
     expect(title).toHaveTextContent('Error')

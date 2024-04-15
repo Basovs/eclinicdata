@@ -3,22 +3,21 @@ import { Loader2Icon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { useGetTodaysBirthdaysQuery } from '@/pages/todays-birthdays/queries/use-get-todays-birthdays-query'
-import { useGetBirthdaysStore } from '@/pages/todays-birthdays/stores/use-get-birthdays-store'
 
+import { useGetBirthdaysStore } from '../../stores/get-birthdays/get-birthdays-store'
 import { BirthdaysErrorModal } from '../birthdays-error-modal'
 
 export const BirthdayFetchButton = () => {
-  const setEnableFetch = useGetBirthdaysStore(state => state.setEnableFetch)
-  const fetchEnabled = useGetBirthdaysStore(state => state.fetchEnabled)
+  const { setIsFetchEnabled, isFetchEnabled } = useGetBirthdaysStore()
 
   const { data, isLoading, refetch } = useGetTodaysBirthdaysQuery()
 
   const handleFetch = () => {
-    if (fetchEnabled) {
+    if (isFetchEnabled) {
       refetch()
     }
 
-    setEnableFetch(true)
+    setIsFetchEnabled(true)
   }
 
   return (
@@ -31,6 +30,7 @@ export const BirthdayFetchButton = () => {
           exit={{ opacity: 0, height: 0, overflow: 'hidden' }}
         >
           <Button
+            data-testid="fetch-todays-birthdays-button"
             onClick={handleFetch}
             disabled={isLoading}
             className="flex items-center gap-4 w-96"
@@ -41,7 +41,6 @@ export const BirthdayFetchButton = () => {
           </Button>
         </motion.div>
       )}
-
       <BirthdaysErrorModal />
     </AnimatePresence>
   )

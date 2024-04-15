@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { Button } from '@/components/ui/button'
 
-import { useGetBirthdaysStore } from '../../stores/use-get-birthdays-store'
+import { useGetBirthdaysStore } from '../../stores/get-birthdays/get-birthdays-store'
 
 const variants = {
   open: {

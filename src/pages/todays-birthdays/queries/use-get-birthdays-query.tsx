@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import { WIKI_ON_THIS_DAY_API } from '../constants/apis'
 import { BIRTHDAYS_QUERY_KEY } from '../constants/query-keys'
 import { parseBirthdays } from '../helpers/parse-birthdays'
-import { useGetBirthdaysStore } from '../stores/use-get-birthdays-store'
+import { useGetBirthdaysStore } from '../stores/get-birthdays/get-birthdays-store'
 
 type FetBirthdaysProps = {
   month: string
@@ -42,13 +42,13 @@ const fetchBirthdays = async (props: FetBirthdaysProps) => {
 }
 
 export const useGetBirthdaysQuery = (props: GetBirthdaysProps) => {
-  const fetchEnabled = useGetBirthdaysStore(state => state.fetchEnabled)
+  const isFetchEnabled = useGetBirthdaysStore(state => state.isFetchEnabled)
   const setIsError = useGetBirthdaysStore(state => state.setIsError)
 
   return useQuery({
     queryKey: [BIRTHDAYS_QUERY_KEY, props.month, props.day],
     queryFn: () => fetchBirthdays({ ...props, setIsError }),
     select: parseBirthdays,
-    enabled: fetchEnabled && Boolean(props.month) && Boolean(props.day),
+    enabled: isFetchEnabled && Boolean(props.month) && Boolean(props.day),
   })
 }

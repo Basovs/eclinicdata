@@ -1,11 +1,11 @@
-import { create } from 'zustand'
+import { type StateCreator } from 'zustand'
 
-import { BIRTHDAYS_PER_PAGE } from '../constants/values'
-import { BirthdayListItemType } from '../types'
+import { BIRTHDAYS_PER_PAGE } from '../../constants/values'
+import { BirthdayListItemType } from '../../types'
 
-type GetBirthdaysStoreState = {
-  fetchEnabled: boolean
-  setEnableFetch: (newValue: boolean) => void
+export type GetBirthdaysStore = {
+  isFetchEnabled: boolean
+  setIsFetchEnabled: (newValue: boolean) => void
   isError: boolean
   setIsError: (isError: boolean) => void
   birthdaysFrom: number
@@ -16,9 +16,9 @@ type GetBirthdaysStoreState = {
   setBirthdays: (birthdays: BirthdayListItemType[] | undefined) => void
 }
 
-export const useGetBirthdaysStore = create<GetBirthdaysStoreState>(set => ({
-  fetchEnabled: false,
-  setEnableFetch: fetchEnabled => set({ fetchEnabled }),
+export const getBirthdaysStoreCreator: StateCreator<GetBirthdaysStore> = set => ({
+  isFetchEnabled: false,
+  setIsFetchEnabled: isFetchEnabled => set({ isFetchEnabled }),
   isError: false,
   setIsError: isError => set({ isError }),
   birthdaysFrom: 0,
@@ -27,4 +27,4 @@ export const useGetBirthdaysStore = create<GetBirthdaysStoreState>(set => ({
   setBirthdaysTo: birthdaysTo => set({ birthdaysTo }),
   birthdays: [],
   setBirthdays: birthdays => set({ birthdays: birthdays }),
-}))
+})

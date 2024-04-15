@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import { useGetTodaysBirthdaysQuery } from '@/pages/todays-birthdays/queries/use-get-todays-birthdays-query'
 
-import { useGetBirthdaysStore } from '../../stores/use-get-birthdays-store'
+import { useGetBirthdaysStore } from '../../stores/get-birthdays/get-birthdays-store'
 import { BirthdayListItem } from '../birthday-list-item'
 import { BirthdayListSkeleton } from '../birthday-list-skeleton'
 

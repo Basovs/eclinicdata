@@ -8,23 +8,23 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 
-import { useGetBirthdaysStore } from '../../stores/use-get-birthdays-store'
+import { useGetBirthdaysStore } from '../../stores/get-birthdays/get-birthdays-store'
 
 export function BirthdaysErrorModal() {
   const isError = useGetBirthdaysStore(state => state.isError)
   const setIsError = useGetBirthdaysStore(state => state.setIsError)
-  const setEnableFetch = useGetBirthdaysStore(state => state.setEnableFetch)
+  const setIsFetchEnabled = useGetBirthdaysStore(state => state.setIsFetchEnabled)
 
   const handleClose = () => {
     setIsError(false)
-    setEnableFetch(false)
+    setIsFetchEnabled(false)
   }
 
   return (
     <Dialog open={Boolean(isError)} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle data-testid="error-modal-title" className="text-red-600">
+          <DialogTitle data-testid="fetch-birthdays-error-modal-title" className="text-red-600">
             Error
           </DialogTitle>
           <DialogDescription>
