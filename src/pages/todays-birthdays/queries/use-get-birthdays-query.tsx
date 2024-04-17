@@ -30,6 +30,10 @@ const fetchBirthdays = async (props: FetBirthdaysProps) => {
         .replace('{DD}', props.day),
     )
 
+    if (!response.ok) {
+      throw new Error('Failed to fetch birthdays')
+    }
+
     return response.json()
   } catch (error: unknown) {
     if (error instanceof Error) {

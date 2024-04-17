@@ -7,10 +7,7 @@ import { BirthdayListItem } from '../birthday-list-item'
 import { BirthdayListSkeleton } from '../birthday-list-skeleton'
 
 export const BirthdayList = () => {
-  const birthdaysFrom = useGetBirthdaysStore(state => state.birthdaysFrom)
-  const birthdaysTo = useGetBirthdaysStore(state => state.birthdaysTo)
-  const birthdays = useGetBirthdaysStore(state => state.birthdays)
-  const setBirthdays = useGetBirthdaysStore(state => state.setBirthdays)
+  const { birthdaysFrom, birthdaysTo, birthdays, setBirthdays } = useGetBirthdaysStore()
 
   const { data: birthdaysRaw, isLoading, isFetched } = useGetTodaysBirthdaysQuery()
 
