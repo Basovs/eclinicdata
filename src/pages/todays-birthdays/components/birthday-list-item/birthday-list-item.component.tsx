@@ -25,11 +25,11 @@ export const BirthdayListItem = (props: BirthdayListItemType & { index: number }
   return (
     <motion.div
       data-testid="birthday-list-item"
-      className="flex items-center gap-4 w-96"
       variants={listItemVariants}
       initial="initial"
       animate="animate"
       custom={props.index}
+      className="flex items-center gap-4 w-96 self-start"
     >
       {props.image ? (
         <img
