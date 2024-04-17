@@ -43,7 +43,7 @@ export const BirthdayList = () => {
   return (
     <div
       data-testid="birthday-list"
-      className="grid md:grid-cols-2 xl:grid-cols-3 flex-col gap-4 py-10 min-h-[568px]"
+      className="grid md:grid-cols-2 xl:grid-cols-3 flex-col gap-4 py-10 min-h-[588px]"
     >
       {paginatedBirthdays.map((birthday, i) => (
         <BirthdayListItem key={`${birthday.name}_${birthday.year}`} {...birthday} index={i} />

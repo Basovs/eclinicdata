@@ -1,30 +1,30 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, Variants, motion } from 'framer-motion'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 
 import { useGetBirthdaysStore } from '../../stores/get-birthdays/get-birthdays-store'
 
-const variants = {
-  open: {
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
+const variants: Variants = {
+  initial: {
     opacity: 0,
     transition: {
-      y: { stiffness: 1000 },
+      delay: 1.4,
+    },
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 1.4,
     },
   },
 }
 
 export const PaginationButtons = () => {
-  const birthdaysFrom = useGetBirthdaysStore(state => state.birthdaysFrom)
-  const setBirthdaysFrom = useGetBirthdaysStore(state => state.setBirthdaysFrom)
-  const birthdaysTo = useGetBirthdaysStore(state => state.birthdaysTo)
-  const setBirthdaysTo = useGetBirthdaysStore(state => state.setBirthdaysTo)
-  const birthdays = useGetBirthdaysStore(state => state.birthdays)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const { birthdaysFrom, setBirthdaysFrom, birthdaysTo, setBirthdaysTo, birthdays } =
+    useGetBirthdaysStore()
 
   const handleNext = () => {
     setBirthdaysFrom(birthdaysFrom + 15)
@@ -41,14 +41,27 @@ export const PaginationButtons = () => {
   }
 
   return (
-    <motion.div className="flex gap-6" variants={variants}>
-      <Button onClick={handlePrevious} disabled={birthdaysFrom === 0}>
-        Previoius
-      </Button>
+    <div>
+      <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
 
-      <Button onClick={handleNext} disabled={birthdaysTo >= (birthdays?.length ?? 0)}>
-        Next
-      </Button>
-    </motion.div>
+      <AnimatePresence>
+        {Boolean(birthdays.length) ? (
+          <motion.div
+            className="flex gap-6"
+            initial="initial"
+            animate="animate"
+            variants={variants}
+          >
+            <Button onClick={handlePrevious} disabled={birthdaysFrom === 0}>
+              Previoius
+            </Button>
+
+            <Button onClick={handleNext} disabled={birthdaysTo >= (birthdays?.length ?? 0)}>
+              Next
+            </Button>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </div>
   )
 }
