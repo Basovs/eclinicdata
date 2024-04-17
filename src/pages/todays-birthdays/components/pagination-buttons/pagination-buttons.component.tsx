@@ -1,5 +1,4 @@
 import { AnimatePresence, Variants, motion } from 'framer-motion'
-import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 
@@ -21,8 +20,6 @@ const variants: Variants = {
 }
 
 export const PaginationButtons = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
   const { birthdaysFrom, setBirthdaysFrom, birthdaysTo, setBirthdaysTo, birthdays } =
     useGetBirthdaysStore()
 
@@ -41,27 +38,18 @@ export const PaginationButtons = () => {
   }
 
   return (
-    <div>
-      <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
+    <AnimatePresence>
+      {Boolean(birthdays.length) ? (
+        <motion.div className="flex gap-6" initial="initial" animate="animate" variants={variants}>
+          <Button onClick={handlePrevious} disabled={birthdaysFrom === 0}>
+            Previoius
+          </Button>
 
-      <AnimatePresence>
-        {Boolean(birthdays.length) ? (
-          <motion.div
-            className="flex gap-6"
-            initial="initial"
-            animate="animate"
-            variants={variants}
-          >
-            <Button onClick={handlePrevious} disabled={birthdaysFrom === 0}>
-              Previoius
-            </Button>
-
-            <Button onClick={handleNext} disabled={birthdaysTo >= (birthdays?.length ?? 0)}>
-              Next
-            </Button>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </div>
+          <Button onClick={handleNext} disabled={birthdaysTo >= (birthdays?.length ?? 0)}>
+            Next
+          </Button>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   )
 }

@@ -3,10 +3,12 @@ import { BirthdayFetchButton } from '@/pages/todays-birthdays/components/birthda
 import { BirthdayList } from '@/pages/todays-birthdays/components/birthday-list'
 
 import { PaginationButtons } from './components/pagination-buttons'
+import { SwitchDateButtons } from './components/switch-date-buttons'
+import { useGetBirthdaysStore } from './stores/get-birthdays/get-birthdays-store'
 
 export const TodaysBirthdaysPage = () => {
-  const today = new Date()
-  const formattedDate = today.toLocaleDateString('en-US', {
+  const { date } = useGetBirthdaysStore()
+  const formattedDate = date.toLocaleDateString('en-US', {
     dateStyle: 'medium',
   })
 
@@ -18,7 +20,11 @@ export const TodaysBirthdaysPage = () => {
         <div className="flex flex-col items-center gap-6">
           <BirthdayList />
 
-          <PaginationButtons />
+          <div className="flex justify-between w-full">
+            <PaginationButtons />
+
+            <SwitchDateButtons />
+          </div>
         </div>
       </div>
     </TitleLayout>

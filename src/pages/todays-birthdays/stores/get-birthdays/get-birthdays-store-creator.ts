@@ -14,6 +14,8 @@ export type GetBirthdaysStore = {
   setBirthdaysTo: (birthdaysTo: number) => void
   birthdays: BirthdayListItemType[] | undefined
   setBirthdays: (birthdays: BirthdayListItemType[] | undefined) => void
+  date: Date
+  setDate: (date: Date) => void
 }
 
 export const getBirthdaysStoreCreator: StateCreator<GetBirthdaysStore> = set => ({
@@ -27,4 +29,6 @@ export const getBirthdaysStoreCreator: StateCreator<GetBirthdaysStore> = set => 
   setBirthdaysTo: birthdaysTo => set({ birthdaysTo }),
   birthdays: [],
   setBirthdays: birthdays => set({ birthdays: birthdays }),
+  date: new Date(),
+  setDate: date => set({ date }),
 })
