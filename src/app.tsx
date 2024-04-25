@@ -1,9 +1,16 @@
+import { ClerkProvider } from '@clerk/clerk-react'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
+
+// Check if Clerk publishable key is set
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+if (!PUBLISHABLE_KEY) {
+  throw new Error('Missing Clerk Publishable Key')
+}
 
 // Create a new router instance
 const router = createRouter({ routeTree })
@@ -21,7 +28,9 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+        <RouterProvider router={router} />
+      </ClerkProvider>
     </StrictMode>,
   )
 }

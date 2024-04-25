@@ -35,6 +35,12 @@ export const AboutPage = () => {
               <span className="font-semibold">ShadcnUI</span> - UI components
             </li>
             <li>
+              <span className="font-semibold">react-hook-form</span> - Forms
+            </li>
+            <li>
+              <span className="font-semibold">Zod</span> - Validation
+            </li>
+            <li>
               <span className="font-semibold">Tailwind CSS</span> - CSS
             </li>
             <li>
