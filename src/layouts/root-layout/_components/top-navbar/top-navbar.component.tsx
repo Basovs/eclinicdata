@@ -17,6 +17,11 @@ export const TopNavbar = () => {
             About
           </Button>
         </Link>
+        <Link to="/amplify-gen2-test" className="[&.active]:font-bold">
+          <Button variant="link" size="lg">
+            Amplify Gen2 Test
+          </Button>
+        </Link>
       </div>
 
       <div className="flex gap-4">
