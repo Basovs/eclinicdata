@@ -54,22 +54,37 @@ const AuthSignInLazyRoute = AuthSignInLazyImport.update({
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
     '/amplify-gen2-test': {
+      id: '/amplify-gen2-test'
+      path: '/amplify-gen2-test'
+      fullPath: '/amplify-gen2-test'
       preLoaderRoute: typeof AmplifyGen2TestImport
       parentRoute: typeof rootRoute
     }
     '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
       preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
     '/auth/sign-in': {
+      id: '/auth/sign-in'
+      path: '/auth/sign-in'
+      fullPath: '/auth/sign-in'
       preLoaderRoute: typeof AuthSignInLazyImport
       parentRoute: typeof rootRoute
     }
     '/auth/sign-up': {
+      id: '/auth/sign-up'
+      path: '/auth/sign-up'
+      fullPath: '/auth/sign-up'
       preLoaderRoute: typeof AuthSignUpLazyImport
       parentRoute: typeof rootRoute
     }
@@ -78,12 +93,12 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([
+export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
   AmplifyGen2TestRoute,
   AboutLazyRoute,
   AuthSignInLazyRoute,
   AuthSignUpLazyRoute,
-])
+})
 
 /* prettier-ignore-end */
