@@ -19,7 +19,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@tanstack/react-query": "^5.28.14",
     "@tanstack/react-router": "^1.26.7",
-    "aws-amplify": "^6.0.30",
+    "aws-amplify": "^6.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
@@ -34,8 +34,8 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^0.13.2",
-    "@aws-amplify/backend-cli": "^0.13.0",
+    "@aws-amplify/backend": "^1.0.0",
+    "@aws-amplify/backend-cli": "^1.0.1",
     "@tanstack/eslint-plugin-query": "^5.28.11",
     "@tanstack/router-devtools": "^1.26.7",
     "@tanstack/router-vite-plugin": "^1.26.6",

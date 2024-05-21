@@ -41,6 +41,8 @@ export default function CreateTodoForm() {
         title: values.title,
         content: values.content,
         is_done: false,
+        created_at: new Date().getTime(),
+        id: new Date().getTime().toString(),
       })
     },
     onSettled: () => {
@@ -67,7 +69,7 @@ export default function CreateTodoForm() {
               <FormItem>
                 <FormLabel>Title</FormLabel>
                 <FormControl>
-                  <Input disabled={createTodo.isPending} {...field} />
+                  <Input autoComplete="off" disabled={createTodo.isPending} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -81,7 +83,7 @@ export default function CreateTodoForm() {
               <FormItem>
                 <FormLabel>Content</FormLabel>
                 <FormControl>
-                  <Input disabled={createTodo.isPending} {...field} />
+                  <Input autoComplete="off" disabled={createTodo.isPending} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

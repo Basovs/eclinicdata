@@ -3,12 +3,13 @@ import { type ClientSchema, a, defineData } from '@aws-amplify/backend'
 const schema = a.schema({
   Todo: a
     .model({
+      id: a.id().required(),
       title: a.string(),
       content: a.string(),
       is_done: a.boolean(),
-      createdAt: a.timestamp(),
+      created_at: a.timestamp().required(),
     })
-    // .secondaryIndexes(index => [index('createdAt').sortKeys([''])])
+    .identifier(['id', 'created_at'])
     .authorization(allow => [allow.guest()]),
 })
 
