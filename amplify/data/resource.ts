@@ -7,9 +7,10 @@ const schema = a.schema({
       title: a.string(),
       content: a.string(),
       is_done: a.boolean(),
-      created_at: a.timestamp().required(),
+      type: a.enum(['Todo']),
+      created_at: a.datetime().required(),
     })
-    .identifier(['id', 'created_at'])
+    .secondaryIndexes(index => [index('type').sortKeys(['created_at']).queryField('listByDate')])
     .authorization(allow => [allow.guest()]),
 })
 

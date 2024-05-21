@@ -8,10 +8,15 @@ export default function TodoList() {
   const { data } = useQuery({
     queryKey: ['todos'],
     queryFn: () =>
-      amplifyClient.models.Todo.list({
-        selectionSet: ['id', 'title', 'content'],
-        sortDirection: 'DESC',
-      }),
+      amplifyClient.models.Todo.listByDate(
+        {
+          type: 'Todo',
+        },
+        {
+          sortDirection: 'DESC',
+          selectionSet: ['type', 'id', 'title', 'content'],
+        },
+      ),
     select: data => data.data,
   })
 

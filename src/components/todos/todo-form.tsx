@@ -38,11 +38,11 @@ export default function CreateTodoForm() {
   const createTodo = useMutation({
     mutationFn: async (values: FormValues) => {
       await amplifyClient.models.Todo.create({
+        type: 'Todo',
         title: values.title,
         content: values.content,
         is_done: false,
-        created_at: new Date().getTime(),
-        id: new Date().getTime().toString(),
+        created_at: new Date().toISOString(),
       })
     },
     onSettled: () => {
